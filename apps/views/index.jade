@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  form(id="faceFrom" method="post", enctype="multipart/form-data", action="/upload")
+    div
+      input(type="file",id="upload_image", name="upload_image", accept="image/*")
+    div
+      input(type="button", value="解析", onclick="ajax_submit('#faceFrom',{begin:function(){ },complete:function(){ }})")
+    div
+      //canvas(style="display:none")
+      span(id="loadImage")
+    #analyzeResult
+    div
+      canvas(id="loadImage2", width='3264', height='2448')
+    
